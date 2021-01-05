@@ -5,10 +5,8 @@
 .App-header {
   position: fixed;
   width: 100%;
-  font-size: 40px;
-  height: 150px;
+  height: 80px;
   border-bottom: 1px dashed red;
-  background: grey;
 }
 
 .navbar {
@@ -17,9 +15,9 @@
 }
 
 .nav-logo {
-  height: 125px;
-  width: 125px;
-  margin: 10px 10px 20px 40px;
+  height: 80px;
+  width: 80px;
+  margin-left: 40px;
 }
 
 .App-footer {
@@ -31,6 +29,5 @@
   justify-content: center;
   height: 65px;
   border-top: 1px dashed red;
-  background: grey;
-  font-size: 14px;
+  font-size: 10px;
 }

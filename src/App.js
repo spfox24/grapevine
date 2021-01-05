@@ -17,7 +17,6 @@ function App() {
     setRecs(data);
   }
 
-
   return (
     <div className="App">
       <header className="App-header">
