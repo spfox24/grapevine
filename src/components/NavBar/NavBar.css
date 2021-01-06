@@ -1,0 +1,40 @@
+.NavBar {
+    height: 80px;
+    display: flex;
+}
+
+.Logo-link {
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+}
+
+.Logo {
+    height: 80px;
+    width: 80px;
+}
+
+.links {
+    display: flex;
+    float: right;
+}
+
+.nav-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    padding: 10px;
+    width: 60px;
+}
+
+.NavBar-link {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-link:hover {
+    background: grey;
+    border-bottom: 1px solid red;
+}
+

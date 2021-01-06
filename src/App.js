@@ -1,14 +1,19 @@
 import { useState, useEffect } from 'react';
-import { fetchRecData } from './services/recService';
 import './App.css';
-import Logo from './img/gvlogo.png';
+
+import IndexPage from './pages/IndexPage/IndexPage';
+import SignupPage from './pages/SignupPage/SignupPage';
+import LoginPage from './pages/LoginPage/LoginPage';
+
+import NavBar from './components/NavBar/NavBar';
 
 import { Route, Switch } from 'react-router-dom';
+
+import { fetchRecData } from './services/recService';
 
 function App() {
   
   const [ recs, setRecs ] = useState([]);
-
 
   useEffect(() => {
     getRecs()
@@ -21,19 +26,29 @@ function App() {
 
   return (
     <div className="App">
-      <Switch>
       <header className="App-header">
-        <nav className="navbar">
-           <img src={Logo} alt="logo" className="nav-logo" />
-        </nav>
+        <NavBar />
       </header>
-      
-
-
+    <Switch>
+      <Route exact path='/' render={() =>
+        <IndexPage 
+        
+        />
+      } />
+        <Route exact path='/login' render={() =>
+        <LoginPage 
+        
+        />
+      } />
+        <Route exact path='/signup' render={() =>
+        <SignupPage
+        
+        />
+      } />
+      </Switch>
       <footer className="App-footer">
         Copyright 2021
       </footer>
-      </Switch>
     </div>
   );
 }
