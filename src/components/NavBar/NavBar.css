@@ -1,11 +1,18 @@
 .NavBar {
-    height: 80px;
+    margin: 0;
+    overflow: hidden;
+}
+
+.links {
+    margin: 0;
+    padding: 0;
     display: flex;
+    align-items: center;
 }
 
 .Logo-link {
-    display: flex;
-    align-items: center;
+    display: inline-block;
+    list-style-type: none;
     margin-left: 40px;
 }
 
@@ -14,21 +21,15 @@
     width: 80px;
 }
 
-.links {
-    display: flex;
-    float: right;
-}
-
 .nav-link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    padding: 10px;
-    width: 60px;
+    font-size: 15px;
+    list-style-type: none;
 }
 
 .NavBar-link {
+    display: block;
+    line-height: 3em;
+    padding: 1em 3em;
     text-decoration: none;
     color: black;
 }
@@ -36,5 +37,9 @@
 .nav-link:hover {
     background: grey;
     border-bottom: 1px solid red;
+}
+
+nav ul li:first-child {
+    margin-right: auto;
 }
 
