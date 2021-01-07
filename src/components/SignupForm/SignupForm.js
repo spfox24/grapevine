@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { signup } from '../../services/userService';
 
 function SignupForm(props) {
 
@@ -20,16 +20,22 @@ function SignupForm(props) {
         }));
     }
 
-    function handleSubmit(evt) {
-        evt.preventDefault();
-        console.log('submitted form data: ', formState)
+    async function handleSubmit(evt) {
+        try {
+            evt.preventDefault();
+            await signup(formState)
+            
+            setFormState(getInitialFormState());
+    
+            props.history.push('/dashboard');
 
-        setFormState(getInitialFormState());
-        props.history.push('/dashboard');
+        } catch (error) {
+            alert(error.message);
+        }
     };
 
     return(
-        <div className="Page">
+        <div>
             <form onSubmit={handleSubmit}>
                 <input 
                     value={formState.name} 
