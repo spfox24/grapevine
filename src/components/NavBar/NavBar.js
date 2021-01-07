@@ -12,11 +12,14 @@ const NavBar = (props) => {
                     </Link>
                 </li>
                 <li className="nav-link">
+                <Link to='/logout' className="NavBar-link">Logout</Link>
+                </li>
+                <li className="nav-link">
                     <Link to='/login' className="NavBar-link">Login</Link>
                 </li>
                 <li className="nav-link">
                     <Link to='/signup' className="NavBar-link">Signup</Link>
-                </li>  
+                </li>
             </ul>
         </nav>
     );

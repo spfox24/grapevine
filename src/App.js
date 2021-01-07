@@ -6,6 +6,7 @@ import SignupPage from './pages/SignupPage/SignupPage';
 import LoginPage from './pages/LoginPage/LoginPage';
 
 import NavBar from './components/NavBar/NavBar';
+import Footer from './components/Footer';
 
 import { Route, Switch } from 'react-router-dom';
 
@@ -46,9 +47,8 @@ function App() {
         />
       } />
       </Switch>
-      <footer className="App-footer">
-        Copyright 2021
-      </footer>
+      
+      <Footer />
     </div>
   );
 }
