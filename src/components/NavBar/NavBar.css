@@ -25,6 +25,7 @@
 .nav-link {
     font-size: 15px;
     list-style-type: none;
+    font-family: var(--font-primary);
 }
 
 .NavBar-link {
@@ -36,8 +37,8 @@
 }
 
 .nav-link:hover {
-    background: grey;
-    border-bottom: 1px solid red;
+    background: var(--main-theme);
+    border-bottom: 2px solid var(--accent-theme);
 }
 
 nav ul li:first-child {
