@@ -1,9 +1,14 @@
+import { useState } from 'react';
+import SignupForm from '../../components/SignupForm/SignupForm';
 import './SignupPage.css';
 
 const SignupPage = (props) => {
+    
+
+
     return (
-        <div>
-            Signup
+        <div className="SignupPage">
+            <SignupForm />
         </div>   
     );
 };

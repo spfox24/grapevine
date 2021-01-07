@@ -4,7 +4,7 @@ import './App.css';
 import IndexPage from './pages/IndexPage';
 import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
-import LogoutPage from './pages/LogoutPage';
+import DashboardPage from './pages/DashboardPage';
 
 import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer';
@@ -38,19 +38,19 @@ function App() {
         
           />
           } />
-          <Route exact path='/logout' render={props =>
-          <LogoutPage 
+          <Route exact path='/dashboard' render={props =>
+          <DashboardPage 
         
           />
           } />
           <Route exact path='/login' render={props =>
           <LoginPage 
-        
+            {...props}
           />
           } />
           <Route exact path='/signup' render={props =>
           <SignupPage
-        
+            {...props}
           />
           } />
         </Switch>
