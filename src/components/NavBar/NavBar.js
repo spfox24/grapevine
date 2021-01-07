@@ -11,18 +11,26 @@ const NavBar = (props) => {
                         <img src={logo} className="Logo"/>
                     </Link>
                 </li>
-                <li className="nav-link">
-                    <Link to='/login' className="NavBar-link">Login</Link>
-                </li>
-                <li className="nav-link">
-                <Link to='' className="NavBar-link">Logout</Link>
-                </li>
-                <li className="nav-link">
-                    <Link to='/signup' className="NavBar-link">Signup</Link>
-                </li>
-                <li className="nav-link">
-                    <Link to='/dashboard' className="NavBar-link">My Grapevine</Link>
-                </li>
+                {
+                    props.user ?
+                    <>
+                        <li className="nav-link">
+                            <Link to='/dashboard' className="NavBar-link">My Grapevine</Link>
+                        </li>
+                        <li className="nav-link">
+                            <Link to='' onClick={props.handleLogout} className="NavBar-link">Logout</Link>
+                        </li>
+                    </>
+                    :
+                    <>
+                        <li className="nav-link">
+                            <Link to='/login' className="NavBar-link">Login</Link>
+                        </li>
+                        <li className="nav-link">
+                            <Link to='/signup' className="NavBar-link">Signup</Link>
+                        </li>
+                    </>
+                }
             </ul>
         </nav>
     );

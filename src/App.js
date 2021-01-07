@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { getUser, logout } from './services/userService';
+
 import './App.css';
 
 import IndexPage from './pages/IndexPage';
@@ -9,27 +11,37 @@ import DashboardPage from './pages/DashboardPage';
 import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer';
 
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 
-import { fetchRecData } from './services/recService';
 
-function App() {
+
+function App(props) {
   
-  const [ recs, setRecs ] = useState([]);
+  const [ userState, setUserState ] = useState({
+    user: getUser()
+  });
 
-  useEffect(() => {
-    getRecs()
-  }, [])
+  function handleSignupOrLogin() {
+    setUserState({
+      user: getUser()
+    })
+  }
 
-  async function getRecs() {
-    const data = await fetchRecData();
-    setRecs(data);
+  function handleLogout() {
+    logout();
+
+    setUserState({ user: null });
+
+    props.history.push('/');
   }
 
   return (
     <div className="App">
       <header className="App-header">
-        <NavBar />
+        <NavBar 
+          handleLogout={handleLogout}
+          user={userState.user}
+        />
       </header>
       <main>
         <Switch>
@@ -39,18 +51,21 @@ function App() {
           />
           } />
           <Route exact path='/dashboard' render={props =>
-          <DashboardPage 
-        
-          />
+            userState.user ? 
+          <DashboardPage />
+          :
+          <Redirect to="/login" />
           } />
           <Route exact path='/login' render={props =>
           <LoginPage 
             {...props}
+            handleSignupOrLogin={handleSignupOrLogin} 
           />
           } />
           <Route exact path='/signup' render={props =>
           <SignupPage
             {...props}
+            handleSignupOrLogin={handleSignupOrLogin} 
           />
           } />
         </Switch>
@@ -61,4 +76,4 @@ function App() {
   );
 }
 
-export default App;
+export default withRouter(App);

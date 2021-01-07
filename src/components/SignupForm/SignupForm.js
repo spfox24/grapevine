@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { signup } from '../../services/userService';
+import './SignupForm.css';
 
 function SignupForm(props) {
 
@@ -26,6 +27,8 @@ function SignupForm(props) {
             await signup(formState)
             
             setFormState(getInitialFormState());
+
+            props.handleSignupOrLogin();
     
             props.history.push('/dashboard');
 
@@ -35,7 +38,7 @@ function SignupForm(props) {
     };
 
     return(
-        <div>
+        <div className="SignupForm">
             <form onSubmit={handleSubmit}>
                 <input 
                     value={formState.name} 
