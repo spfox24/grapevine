@@ -1,7 +1,9 @@
+import './LoginPage.css';
+
 const LoginPage = (props) => {
     return (
-        <div className="LoginPage">
-            
+        <div>
+            Login
         </div>   
     );
 };

@@ -1,7 +1,9 @@
+import './SignupPage.css';
+
 const SignupPage = (props) => {
     return (
-        <div className="SignupPage">
-            
+        <div>
+            Signup
         </div>   
     );
 };

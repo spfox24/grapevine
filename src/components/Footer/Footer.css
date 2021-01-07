@@ -1,12 +1,11 @@
-
-.App-footer {
-    position: fixed;
+.Footer {
     bottom: 0px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 65px;
-    border-top: 1px dashed red;
+    background-color: var(--main-theme);
+    font-family: var(--font-primary);
     font-size: 10px;
   }

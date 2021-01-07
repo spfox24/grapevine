@@ -26,6 +26,7 @@
     font-size: 15px;
     list-style-type: none;
     font-family: var(--font-primary);
+    transition: background-color 0.5s ease-out;
 }
 
 .NavBar-link {
@@ -38,7 +39,7 @@
 
 .nav-link:hover {
     background: var(--main-theme);
-    border-bottom: 2px solid var(--accent-theme);
+    border-bottom: 3px solid var(--accent-theme);
 }
 
 nav ul li:first-child {

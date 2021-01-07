@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 
-import IndexPage from './pages/IndexPage/IndexPage';
-import SignupPage from './pages/SignupPage/SignupPage';
-import LoginPage from './pages/LoginPage/LoginPage';
+import IndexPage from './pages/IndexPage';
+import SignupPage from './pages/SignupPage';
+import LoginPage from './pages/LoginPage';
+import LogoutPage from './pages/LogoutPage';
 
 import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer';
@@ -30,25 +31,32 @@ function App() {
       <header className="App-header">
         <NavBar />
       </header>
-    <Switch>
-      <Route exact path='/' render={() =>
-        <IndexPage 
+      <main>
+        <Switch>
+          <Route exact path='/' render={props =>
+          <IndexPage 
         
-        />
-      } />
-        <Route exact path='/login' render={() =>
-        <LoginPage 
+          />
+          } />
+          <Route exact path='/logout' render={props =>
+          <LogoutPage 
         
-        />
-      } />
-        <Route exact path='/signup' render={() =>
-        <SignupPage
+          />
+          } />
+          <Route exact path='/login' render={props =>
+          <LoginPage 
         
-        />
-      } />
-      </Switch>
-      
-      <Footer />
+          />
+          } />
+          <Route exact path='/signup' render={props =>
+          <SignupPage
+        
+          />
+          } />
+        </Switch>
+
+        </main>
+        <Footer />
     </div>
   );
 }
