@@ -1,0 +1,38 @@
+.LoginHeader {
+    font-family: var(--font-primary);
+    color: #272525;
+}
+
+.LoginForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 4px;
+    position: relative;
+    width: 350px;
+    height: 350px;
+    background: var(--accent-color);
+    background: linear-gradient(to right, #6fadb4, #7cc0c7);
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+.formBody {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 20px 0px 20px;
+}
+
+button {
+    border: none;
+    border-radius: 4px;
+    background-color: #ffffff;
+    font-family: var(--font-primary);
+    height: 28px;
+    width: auto;
+    color: var(--accent-color);
+    cursor: pointer;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.2);
+    outline: none;
+    margin-top: 10px;
+}

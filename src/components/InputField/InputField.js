@@ -15,8 +15,9 @@ function InputField (props) {
 
     function changeValue(evt) {
         const value = evt.target.value;
+
         setInputState({ ...inputState, value, error: "" });
-        props.handleChange(inputState);
+        props.handleChange(inputState, value);
       }
     
       function handleKeyPress(evt) {
@@ -39,11 +40,11 @@ function InputField (props) {
             )}
             <input
                 id={props.id}
-                type="text"
+                type={props.type}
                 value={value}
                 placeholder={label}
                 onChange={changeValue}
-                onKeyPress={handleKeyPress}
+                handleKeyPress={handleKeyPress}
                 onFocus={() => !locked && setInputState({ ...inputState, active: true })}
                 onBlur={() => !locked && setInputState({ ...inputState, active: false })}
             />

@@ -20,10 +20,10 @@ function SignupForm(props) {
         }
     };
 
-    function handleChange(arg) {
+    function handleChange(input, arg) {
         setFormState(prevState => ({
             ...prevState,
-            [arg.name]: arg.value,
+            [input.name]: arg,
         }));
     }
 
@@ -67,9 +67,7 @@ function SignupForm(props) {
                         type="password" 
                         placeholder="Password"
                         />
-                <div className="Button">
                     <button>Sign Up</button>
-                </div>
                 <div className="cancelLink">
                     <Link className="cancel" to='/'>Cancel</Link>
                 </div>

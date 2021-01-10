@@ -1,11 +1,15 @@
 import { useState } from 'react';
 import { login } from '../../services/userService';
+import InputField from '../../components/InputField/InputField';
 
 import './LoginPage.css';
 
 const LoginPage = (props) => {
 
-    const [ formState, setFormState ] = useState(getInitialFormState());
+    const [ formState, setFormState ] = useState({
+        email: "",
+        password: "",
+    });
 
     function getInitialFormState() {
         return {
@@ -14,10 +18,10 @@ const LoginPage = (props) => {
         }
     };
 
-    function handleChange(evt) {
+    function handleChange(input, arg) {
         setFormState(prevState => ({
             ...prevState,
-            [evt.target.name]: evt.target.value
+            [input.name]: arg,
         }));
     }
 
@@ -39,24 +43,27 @@ const LoginPage = (props) => {
 
     return(
         <div className="Page">
-            <form onSubmit={handleSubmit}>
+            <h1 className="LoginHeader">Login</h1>
+            <div className="LoginForm">
+                <form className="formBody" onSubmit={handleSubmit}>
 
-                <input 
-                    value={formState.email} 
-                    onChange={handleChange} 
-                    name="email" 
-                    type="email" 
-                    placeholder="Email"
-                />
-                <input 
-                    value={formState.password} 
-                    onChange={handleChange} 
-                    name="password" 
-                    type="password" 
-                    placeholder="Password"
+                    <InputField 
+                        value={formState.email} 
+                        handleChange={handleChange} 
+                        name="email" 
+                        type="email" 
+                        placeholder="Email"
                     />
-                <button>Login</button>
-            </form>
+                    <InputField 
+                        value={formState.password} 
+                        handleChange={handleChange} 
+                        name="password" 
+                        type="password" 
+                        placeholder="Password"
+                        />
+                    <button>Login</button>
+                </form>
+            </div>
         </div>
     )
 };

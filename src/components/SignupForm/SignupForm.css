@@ -40,13 +40,14 @@ button {
 .cancelLink {
     display: flex;
     justify-content: center;
-    outline: none;
+    margin-top: 10px;
 }
 
 .cancel {
     text-decoration: none;
     color: #ffffff;
     justify-content: center;
+    outline: none;
 }
 
 .cancel:hover {
