@@ -1,9 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 :root {
-  --main-theme: rgb(236, 223, 202);
-  --accent-theme: rgb(108, 169, 176);
+  --main-color: rgb(236, 223, 202);
+  --accent-color: rgb(108, 169, 176);
   --font-primary: 'Poppins', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {

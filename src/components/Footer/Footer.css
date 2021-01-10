@@ -5,7 +5,8 @@
     align-items: center;
     justify-content: center;
     height: 65px;
-    background-color: var(--main-theme);
+    background-color: var(--main-color);
     font-family: var(--font-primary);
     font-size: 10px;
+    color: #272525;
   }

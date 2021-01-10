@@ -1,7 +1,5 @@
 .NavBar {
-    margin: 0;
-    overflow: hidden;
-    height: 80px;
+    height: 100px;
 }
 
 .links {
@@ -18,8 +16,8 @@
 }
 
 .Logo {
-    height: 80px;
-    width: 80px;
+    height: 100px;
+    width: auto;
 }
 
 .nav-link {
@@ -32,14 +30,14 @@
 .NavBar-link {
     display: block;
     line-height: 3em;
-    padding: 1em 3em;
+    padding: 1.81em 3em;
     text-decoration: none;
-    color: black;
+    color: #272525;
 }
 
 .nav-link:hover {
-    background: var(--main-theme);
-    border-bottom: 3px solid var(--accent-theme);
+    background: var(--main-color);
+    border-bottom: 3px solid var(--accent-color);
 }
 
 nav ul li:first-child {

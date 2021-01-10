@@ -1,11 +1,17 @@
 import { useState } from 'react';
 import { signup } from '../../services/userService';
+import { Link } from 'react-router-dom';
+import InputField from '../InputField/InputField';
 import './SignupForm.css';
 
 function SignupForm(props) {
-
-    const [ formState, setFormState ] = useState(getInitialFormState());
-
+    
+    const [ formState, setFormState ] = useState({
+        name: "",
+        email: "",
+        password: "",
+    });
+    
     function getInitialFormState() {
         return {
             name: "",
@@ -14,10 +20,10 @@ function SignupForm(props) {
         }
     };
 
-    function handleChange(evt) {
+    function handleChange(arg) {
         setFormState(prevState => ({
             ...prevState,
-            [evt.target.name]: evt.target.value
+            [arg.name]: arg.value,
         }));
     }
 
@@ -39,31 +45,37 @@ function SignupForm(props) {
 
     return(
         <div className="SignupForm">
-            <form onSubmit={handleSubmit}>
-                <input 
-                    value={formState.name} 
-                    onChange={handleChange} 
-                    name="name" 
-                    type="text"
-                    placeholder="Name"
-                />
-                <input 
-                    value={formState.email} 
-                    onChange={handleChange} 
-                    name="email" 
-                    type="email" 
-                    placeholder="Email"
-                />
-                <input 
-                    value={formState.password} 
-                    onChange={handleChange} 
-                    name="password" 
-                    type="password" 
-                    placeholder="Password"
+            <form className="formBody" onSubmit={handleSubmit}>
+                    <InputField 
+                        value={formState.name} 
+                        handleChange={handleChange} 
+                        name="name" 
+                        type="text"
+                        placeholder="User Name"
                     />
-                <button>Sign Up</button>
+                    <InputField 
+                        value={formState.email} 
+                        handleChange={handleChange} 
+                        name="email" 
+                        type="email" 
+                        placeholder="Email"
+                    />
+                    <InputField 
+                        value={formState.password} 
+                        handleChange={handleChange} 
+                        name="password" 
+                        type="password" 
+                        placeholder="Password"
+                        />
+                <div className="Button">
+                    <button>Sign Up</button>
+                </div>
+                <div className="cancelLink">
+                    <Link className="cancel" to='/'>Cancel</Link>
+                </div>
             </form>
         </div>
+
     )
 }
 
