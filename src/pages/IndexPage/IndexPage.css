@@ -1,0 +1,63 @@
+.IndexHeader {
+    font-family: var(--font-primary);
+    font-size: 60px;
+}
+
+.t {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    height: 40px;
+    width: 160px;
+}
+
+.signup-link {
+    text-decoration: none;
+}
+
+
+.timg {
+    max-width: 100%;
+    height: auto;
+}
+
+.m {
+    width: 100vh;
+    height: 500px;
+    margin: 40px 0px 10px 0px;
+    display: flex;
+    flex-direction: row;
+    background-image: url('../../img/vineyard1.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.b {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 100px;
+    font-family: var(--font-primary);
+}
+
+.headline-bottom {
+    font-size: 2em;
+    text-align: center
+}
+
+.text-content {
+    font-size: 1em;
+    padding: 0px 160px;
+}

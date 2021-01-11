@@ -8,7 +8,7 @@ const NavBar = (props) => {
             <ul className="links">
                 <li className="Logo-link">
                     <Link to='/'>
-                        <img src={logo} className="Logo"/>
+                        <img src={logo} className="Logo" alt="logo"/>
                     </Link>
                 </li>
                 {
@@ -27,7 +27,7 @@ const NavBar = (props) => {
                             <Link to='/login' className="NavBar-link">Login</Link>
                         </li>
                         <li className="nav-link">
-                            <Link to='/signup' className="NavBar-link">Signup</Link>
+                            <Link to='/signup' className="NavBar-link-signup">Signup</Link>
                         </li>
                     </>
                 }

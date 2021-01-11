@@ -35,6 +35,15 @@
     color: #272525;
 }
 
+
+.NavBar-link-signup {
+    display: block;
+    line-height: 3em;
+    padding: 1.81em 3em;
+    text-decoration: none;
+    color: var(--accent-color);
+}
+
 .nav-link:hover {
     background: var(--main-color);
     border-bottom: 3px solid var(--accent-color);
