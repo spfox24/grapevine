@@ -39,6 +39,7 @@ function InputField (props) {
                 <p className="predicted">{predicted}</p>
             )}
             <input
+                pattern={props.pattern}
                 id={props.id}
                 type={props.type}
                 value={value}

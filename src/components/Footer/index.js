@@ -17,33 +17,33 @@ function Footer (props) {
                 </div>
                 <div className="footer-link-items">
                     <h2>Social Media</h2>
-                        <Link to="/">Facebook</Link>
-                        <Link to="/">Instagram</Link>
-                        <Link to="/">Twitter</Link>
-                        <Link to="/">GitHub</Link>
+                        <a href="https://www.facebook.com/">Facebook</a>
+                        <a href="https://www.instagram.com/">Instagram</a>
+                        <a href="https://twitter.com/">Twitter</a>
+                        <a href="https://github.com/">GitHub</a>
                 </div>
                 <div className="footer-link-items">
                     <h2>Watch</h2>
-                        <Link to="/">Netflix</Link>
-                        <Link to="/">Hulu</Link>
-                        <Link to="/">Prime Video</Link>
-                        <Link to="/">Disney+</Link>
-                        <Link to="/">HBO Max</Link>
+                        <a href="https://www.netflix.com/">Netflix</a>
+                        <a href="https://www.hulu.com/">Hulu</a>
+                        <a href="https://www.primevideo.com/">Prime Video</a>
+                        <a href="https://www.disneyplus.com/">Disney+</a>
+                        <a href="https://www.hbomax.com/">HBO Max</a>
                 </div>
                 <div className="footer-link-items">
                     <h2>Read</h2>
-                        <Link to="/">Scribd</Link>
-                        <Link to="/">Kindle Unlimited</Link>
-                        <Link to="/">Libby</Link>
-                        <Link to="/">Goodreads</Link>
-                        <Link to="/">Book of the Month</Link>
+                        <a href="https://www.scribd.com/">Scribd</a>
+                        <a href="https://www.amazon.com/kindle-dbs/hz/subscribe/ku?*entries*=0&_encoding=UTF8&*Version*=1&shoppingPortalEnabled=true">Kindle Unlimited</a>
+                        <a href="https://libbyapp.com/">Libby</a>
+                        <a href="https://www.goodreads.com/">Goodreads</a>
+                        <a href="https://www.bookofthemonth.com/">Book of the Month</a>
                 </div>
                 <div className="footer-link-items">
                     <h2>Listen</h2>
-                        <Link to="/">Spotify</Link>
-                        <Link to="/">Apple Music</Link>
-                        <Link to="/">Audible</Link>
-                        <Link to="/">SoundCloud</Link>
+                        <a href="https://www.spotify.com/">Spotify</a>
+                        <a href="https://www.apple.com/apple-music/">Apple Music</a>
+                        <a href="https://www.audible.com/">Audible</a>
+                        <a href="https://soundcloud.com/">SoundCloud</a>
                 </div>
             </div>
             <section className="social-media">
@@ -53,44 +53,43 @@ function Footer (props) {
                             <img src={logo} className="logo-footer" alt="logo"/>
                         </Link>
                     
-                    <small className="website-rights">
-                        Copyright &copy; All Rights Reserved {new Date().getFullYear()}
-                    </small>
-                    
                     <div className="social-icons">
-                        <Link className="social-icon-link facebook" 
-                            to="/" 
+                        <a href="https://www.facebook.com/"
+                            className="social-icon-link facebook" 
                             target="_blank"
                             aria-label="Facebook"
                         >
                             <i class="fab fa-facebook"></i>
-                        </Link>
-                        <Link className="social-icon-link instagram" 
-                            to="/" 
+                        </a>
+                        <a href="https://www.instagram.com/"
+                            className="social-icon-link instagram" 
                             target="_blank"
                             aria-label="Instagram"
                         >
                             <i class="fab fa-instagram"></i>
-                        </Link>
-                        <Link className="social-icon-link twitter" 
-                            to="/" 
+                        </a>
+                        <a href="https://twitter.com/"
+                            className="social-icon-link twitter" 
                             target="_blank"
                             aria-label="Twitter"
                         >
                             <i class="fab fa-twitter"></i>
-                        </Link>
-                        <Link className="social-icon-link" 
-                            to="/" 
+                        </a>
+                        <a href="https://github.com/"
+                            className="social-icon-link" 
                             target="_blank"
                             aria-label="GitHub"
                         >
                             <i class="fab fa-github"></i>
-                        </Link>
+                        </a>
                     </div>
                     </div>
                 </div>
             </section>
         </div>
+        <small className="website-rights">
+            Copyright &copy; All Rights Reserved {new Date().getFullYear()}
+        </small>
     </div>
     )
 };

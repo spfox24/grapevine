@@ -1,0 +1,53 @@
+.TopTen-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid var(--accent-color);
+    border-radius: 4px;
+    padding: 20px 40px 20px 40px;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.2);
+    background-color: var(--main-color);
+}
+
+.list-header {
+    font-family: var(--font-primary);
+    font-size: 2em;
+    color: var(--accent-color);
+}
+
+.TopTenForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 4px;
+    position: relative;
+    width: 350px;
+    height: 200px;
+    background: var(--accent-color);
+    background: linear-gradient(to right, #6fadb4, #7cc0c7);
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+.list-container {
+    font-family: var(--font-primary);
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+}
+
+.list-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.list-item {
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+    list-style-type: none;
+    margin-bottom: 16px;
+    color: var(--accent-color);
+    font-weight: 600;
+}

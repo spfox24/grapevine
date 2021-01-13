@@ -1,6 +1,7 @@
 .IndexHeader {
     font-family: var(--font-primary);
     font-size: 60px;
+    text-align: center;
 }
 
 .t {

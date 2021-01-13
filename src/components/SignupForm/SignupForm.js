@@ -52,6 +52,7 @@ function SignupForm(props) {
                         name="name" 
                         type="text"
                         placeholder="User Name"
+                        pattern="[^\s]+"
                     />
                     <InputField 
                         value={formState.email} 
@@ -59,6 +60,7 @@ function SignupForm(props) {
                         name="email" 
                         type="email" 
                         placeholder="Email"
+                        pattern="[^\s]+"
                     />
                     <InputField 
                         value={formState.password} 
@@ -66,6 +68,7 @@ function SignupForm(props) {
                         name="password" 
                         type="password" 
                         placeholder="Password"
+                        pattern="[^\s]+"
                         />
                     <button>Sign Up</button>
                 <div className="cancelLink">

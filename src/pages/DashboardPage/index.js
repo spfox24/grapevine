@@ -1,10 +1,15 @@
+import TopTenForm from '../../components/TopTenForm';
 import './DashboardPage.css';
 
 const DashboardPage = (props) => {
     return (
-        <div>
-            
-        </div>   
+        <div className="Page">
+            <main className="DashMain">
+                <TopTenForm 
+                
+                />
+            </main>
+        </div>  
     );
 };
 

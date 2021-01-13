@@ -22,14 +22,17 @@ const IndexPage = (props) => {
                     <ContentCard 
                         id={1}
                         content="Movies"
+                        url="https://www.imdb.com/"
                     />
                     <ContentCard 
                         id={2}
                         content="Shows"
+                        url="https://www.imdb.com/"
                     />
                     <ContentCard 
                         id={3}
                         content="Books"
+                        url="https://books.google.com/"
                     />
             </div>
             
