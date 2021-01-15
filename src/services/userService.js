@@ -1,4 +1,5 @@
-import { setToken, getUserFromToken, removeToken } from './tokenService';
+import { setToken, getUserFromToken, removeToken, getToken } from './tokenService';
+
 
 const BASE_URL = 'http://localhost:3001/api/users';
 
@@ -29,15 +30,25 @@ function login(creds) {
     }).then(data => setToken(data.token));
 }
 
-function addTop(user) {
-    console.log(user)
+export function fetchTopTenData() {
+    const options = {
+        method: 'GET',
+        headers: {
+            'Authorization': 'Bearer ' + getToken()
+        }
+    }
+    return fetch(BASE_URL + '/dashboard', options).then(res => res.json());
+}
+
+function addTop(item) {
     return fetch(BASE_URL + '/dashboard', {
         method: 'POST',
         headers: {
-            'Content-Type': 'Application/json'
+            'Authorization': 'Bearer ' + getToken(),
         },
-        body: JSON.stringify(user)
+        body: JSON.stringify(item),
     }).then(response => {
+        console.log(response)
         if(response.ok) return response.json();
         throw new Error('An Error Has Occured');
     })
@@ -56,5 +67,5 @@ export {
     login,
     logout,
     getUser,
-    addTop
+    addTop,
 };

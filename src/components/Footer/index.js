@@ -57,6 +57,7 @@ function Footer (props) {
                         <a href="https://www.facebook.com/"
                             className="social-icon-link facebook" 
                             target="_blank"
+                            rel="noreferrer"
                             aria-label="Facebook"
                         >
                             <i class="fab fa-facebook"></i>
@@ -64,6 +65,7 @@ function Footer (props) {
                         <a href="https://www.instagram.com/"
                             className="social-icon-link instagram" 
                             target="_blank"
+                            rel="noreferrer"
                             aria-label="Instagram"
                         >
                             <i class="fab fa-instagram"></i>
@@ -71,6 +73,7 @@ function Footer (props) {
                         <a href="https://twitter.com/"
                             className="social-icon-link twitter" 
                             target="_blank"
+                            rel="noreferrer"
                             aria-label="Twitter"
                         >
                             <i class="fab fa-twitter"></i>
@@ -78,6 +81,7 @@ function Footer (props) {
                         <a href="https://github.com/"
                             className="social-icon-link" 
                             target="_blank"
+                            rel="noreferrer"
                             aria-label="GitHub"
                         >
                             <i class="fab fa-github"></i>

@@ -6,7 +6,7 @@ const DashboardPage = (props) => {
         <div className="Page">
             <main className="DashMain">
                 <TopTenForm 
-                
+                {...props}
                 />
             </main>
         </div>  

@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 import './ContentCard.css';
 
 function ContentCard (props) {
@@ -7,7 +5,7 @@ function ContentCard (props) {
 
     return (
         <main className="Cards">
-            <a href={props.url} className="content-link" target="_blank">
+            <a href={props.url} className="content-link" target="_blank" rel="noreferrer">
             <div className="ContentCard">
                 {props.content}
             </div>

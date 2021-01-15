@@ -58,7 +58,9 @@ function TopTenForm(props) {
             <section className="TopTenList">
                 <div className="list-container">
                     <ul className="list-main">
-                        <li className="list-item"></li>
+                        <li className="list-item">
+                            
+                        </li>
                     </ul>
                 </div>
             </section>

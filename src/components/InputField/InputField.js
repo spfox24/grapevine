@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { render } from 'react-dom';
-import { TransitionMotion, spring } from 'react-motion';
+
 import './InputField.css';
 
 function InputField (props) {
