@@ -51,7 +51,7 @@ function TopTenForm(props) {
                         />
                         <button>Add To Grapevine</button>
                         <div className="cancelLink">
-                            <Link to="/dashboard" className="cancel">Cancel</Link>
+                            <Link to="/" className="cancel">Cancel</Link>
                         </div>
                     </form>
                 </section>

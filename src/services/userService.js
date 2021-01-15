@@ -44,6 +44,7 @@ function addTop(item) {
     return fetch(BASE_URL + '/dashboard', {
         method: 'POST',
         headers: {
+            'Content-Type': 'Application/json',
             'Authorization': 'Bearer ' + getToken(),
         },
         body: JSON.stringify(item),
