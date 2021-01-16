@@ -10,11 +10,13 @@ function TopTenForm(props) {
     
     const [ topFormState, setTopFormState ] = useState({
         title: "",
+        content: "",
     });
 
     function getInitialFormState() {
         return {
             title: "",
+            content: "",
         }
     };
 
@@ -33,6 +35,7 @@ function TopTenForm(props) {
             setTopFormState(getInitialFormState());
 
             props.history.push('/dashboard');
+
         } catch (error) {
             alert(error.message);
         }
@@ -49,7 +52,16 @@ function TopTenForm(props) {
                             type="text"
                             placeholder="Title"
                         />
-                        <button>Add To Grapevine</button>
+                        <label for="Content"></label>
+                            <div className="select">
+                                <select className="Content-select">
+                                    <option value="Movie">Movie</option>
+                                    <option value="Show">Show</option>
+                                    <option value="Book">Book</option>
+                                </select>
+                                <span className="focus"></span>
+                            </div>
+                            <button>Add To Grapevine</button>
                         <div className="cancelLink">
                             <Link to="/" className="cancel">Cancel</Link>
                         </div>
@@ -57,11 +69,24 @@ function TopTenForm(props) {
                 </section>
             <section className="TopTenList">
                 <div className="list-container">
-                    <ul className="list-main">
-                        <li className="list-item">
-                            
-                        </li>
-                    </ul>
+                    <table className="list-table">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Content</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {/* User.topTen.forEach(function(top){ */}
+                        <tr>
+                            <td className="title-data">Harry Potter</td>
+                            <td className="content-data">Book</td>
+                                    {/* <td className="list-item">{topTen.title}</td> */}
+                                    {/* <td className="list-item">{topTen.content}</td> */}
+                        </tr>
+                            {/* }) */}
+                        </tbody>
+                    </table>
                 </div>
             </section>
         </div>

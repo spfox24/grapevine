@@ -30,15 +30,15 @@ function login(creds) {
     }).then(data => setToken(data.token));
 }
 
-export function fetchTopTenData() {
-    const options = {
-        method: 'GET',
-        headers: {
-            'Authorization': 'Bearer ' + getToken()
-        }
-    }
-    return fetch(BASE_URL + '/dashboard', options).then(res => res.json());
-}
+// export function fetchTopTenData() {
+//     const options = {
+//         method: 'GET',
+//         headers: {
+//             'Authorization': 'Bearer ' + getToken()
+//         }
+//     }
+//     return fetch(BASE_URL + '/dashboard', options).then(res => res.json());
+// }
 
 function addTop(item) {
     return fetch(BASE_URL + '/dashboard', {
