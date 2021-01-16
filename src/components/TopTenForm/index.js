@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import InputField from '../InputField/InputField';
 import { addTop } from '../../services/userService';
-
+import { getUser } from '../../services/userService';
 import { Link } from 'react-router-dom';
 import './TopTenForm.css';
+import { getToken } from '../../services/tokenService';
 
+const BASE_URL = 'http://localhost:3001/api/users';
 
 function TopTenForm(props) {
     
@@ -12,6 +14,24 @@ function TopTenForm(props) {
         title: "",
         content: "",
     });
+    
+    const [ listState, setListState ] = useState([])
+
+    useEffect(() => {
+        
+        const userId = getUser()._id;
+
+        const requestOptions = {
+            headers: { 
+                'Content-Type': 'Application/json',
+                'Authorization': 'Bearer ' + getToken()
+            }
+        }
+        fetch(BASE_URL + '/dashboard/' + userId, requestOptions)
+        .then(response => response.json())
+        .then(data =>  setListState(data.topTenArray)
+    )}, []);
+
 
     function getInitialFormState() {
         return {
@@ -25,6 +45,15 @@ function TopTenForm(props) {
             ...prevState,
             [input.name]: arg,
         }));
+    }
+
+    function handleContentChange(evt) {
+        const value = evt.target.value;
+
+        setTopFormState(prevState => ({
+            ...prevState,
+            content: value,
+        }))
     }
 
     async function handleSubmit(evt) {
@@ -54,10 +83,11 @@ function TopTenForm(props) {
                         />
                         <label for="Content"></label>
                             <div className="select">
-                                <select className="Content-select">
+                                <select className="Content-select" value={topFormState.content} onChange={handleContentChange}>
                                     <option value="Movie">Movie</option>
                                     <option value="Show">Show</option>
                                     <option value="Book">Book</option>
+                                    <option value="">Content</option>
                                 </select>
                                 <span className="focus"></span>
                             </div>
@@ -77,14 +107,14 @@ function TopTenForm(props) {
                             </tr>
                         </thead>
                         <tbody>
-                            {/* User.topTen.forEach(function(top){ */}
-                        <tr>
-                            <td className="title-data">Harry Potter</td>
-                            <td className="content-data">Book</td>
-                                    {/* <td className="list-item">{topTen.title}</td> */}
-                                    {/* <td className="list-item">{topTen.content}</td> */}
-                        </tr>
-                            {/* }) */}
+                            { listState && listState.map((item) => {
+                                    return (
+                                  <tr>
+                                      <td className="title-data">{item.title}</td>
+                                      <td className="content-data">{item.content}</td>
+                                  </tr>
+                                )
+                            })}
                         </tbody>
                     </table>
                 </div>

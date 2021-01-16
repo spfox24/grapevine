@@ -7,6 +7,7 @@ const DashboardPage = (props) => {
             <main className="DashMain">
                 <TopTenForm 
                 history={props.history}
+                {...props}
                 />
             </main>
         </div>  
