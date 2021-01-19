@@ -8,11 +8,10 @@ import IndexPage from './pages/IndexPage';
 import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
 import DashboardPage from './pages/DashboardPage';
+import EditPage from './pages/EditPage';
 
 import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer';
-
-
 
 
 function App(props) {
@@ -45,6 +44,11 @@ function App(props) {
       </header>
       <main>
         <Switch>
+          <Route exact path='/:id/edit'>
+            <EditPage 
+            {...props}
+            />
+          </Route>
           <Route exact path='/' render={props =>
           <IndexPage 
         

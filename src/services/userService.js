@@ -31,7 +31,6 @@ function login(creds) {
 }
 
 function addTop(data) {
-    console.log(data)
     return fetch(BASE_URL + '/dashboard', {
         method: 'POST',
         headers: {
@@ -40,10 +39,29 @@ function addTop(data) {
         },
         body: JSON.stringify(data),
     }).then(response => {
-        console.log(response)
         if(response.ok) return response.json();
         throw new Error('An Error Has Occured');
     })
+}
+
+function delTop(data) {
+    return fetch(BASE_URL + '/dashboard', {
+        method: 'DELETE',
+        headers: {
+            'Authorization': 'Bearer ' + getToken(),
+        },
+    }).then(response => {
+        if(response.ok) return response.json();
+        throw new Error('An Error Has Occured');
+    })
+}
+
+function edit(id) {
+
+}
+
+function update(id) {
+
 }
 
 function logout() {
@@ -60,4 +78,7 @@ export {
     logout,
     getUser,
     addTop,
+    delTop,
+    edit,
+    update,
 };

@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import InputField from '../InputField/InputField';
-import { addTop } from '../../services/userService';
+import { addTop, delTop } from '../../services/userService';
 import { getUser } from '../../services/userService';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 import './TopTenForm.css';
 import { getToken } from '../../services/tokenService';
+
 
 const BASE_URL = 'http://localhost:3001/api/users';
 
@@ -32,6 +33,19 @@ function TopTenForm(props) {
         .then(data =>  setListState(data.topTenArray)
     )}, []);
 
+    useEffect(() => {
+        const userId = getUser()._id;
+
+        const requestOptions = {
+            method: 'DELETE',
+            headers: {
+                'Authorization': 'Bearer ' + getToken(),
+                'My-Custom-Header': 'Delete Request'
+            }
+        };
+        fetch(BASE_URL + '/dashboard/:id/' + userId, requestOptions)
+        .then(() => setListState());
+    }, []);
 
     function getInitialFormState() {
         return {
@@ -56,15 +70,25 @@ function TopTenForm(props) {
         }))
     }
 
+    async function handleRemove(idx) {
+       try {
+           await delTop(topFormState);
+
+           props.history.push('/dashboard');
+       } catch (error) {
+        alert(error.message);
+       }
+    }
+
     async function handleSubmit(evt) {
         try {
+
             evt.preventDefault();
             await addTop(topFormState);
 
-            setTopFormState(getInitialFormState());
-
             props.history.push('/dashboard');
-
+            
+            setTopFormState(getInitialFormState());
         } catch (error) {
             alert(error.message);
         }
@@ -72,7 +96,7 @@ function TopTenForm(props) {
 
     return (
         <div className="TopTen-container">
-            <h1 className="list-header">My Top Ten</h1>
+            <h1 className="list-header">My Grapevine</h1>
                 <section className="TopTenForm">
                     <form className="formBody" onSubmit={handleSubmit}>
                         <InputField
@@ -83,7 +107,10 @@ function TopTenForm(props) {
                         />
                         <label for="Content"></label>
                             <div className="select">
-                                <select className="Content-select" value={topFormState.content} onChange={handleContentChange}>
+                                <select className="Content-select" 
+                                    value={topFormState.content} 
+                                    name="content"
+                                    onChange={handleContentChange}>
                                     <option value="Movie">Movie</option>
                                     <option value="Show">Show</option>
                                     <option value="Book">Book</option>
@@ -107,11 +134,19 @@ function TopTenForm(props) {
                             </tr>
                         </thead>
                         <tbody>
-                            { listState && listState.map((item) => {
+                            { listState && listState.map((item, idx) => {
                                     return (
                                   <tr>
                                       <td className="title-data">{item.title}</td>
                                       <td className="content-data">{item.content}</td>
+                                      <td>
+                                            <Link to={`/${idx.id}/edit`} className="edit">
+                                                <i className="fa fa-edit"></i>
+                                            </Link>
+                                      </td>
+                                      <td className="delete" onClick={() => handleRemove(idx.id)}>
+                                            <i className="fas fa-times-circle"></i>
+                                      </td>
                                   </tr>
                                 )
                             })}
