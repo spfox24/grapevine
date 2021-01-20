@@ -47,6 +47,7 @@
 .nav-link:hover {
     background: var(--main-color);
     border-bottom: 3px solid var(--accent-color);
+    font-weight: 500;
 }
 
 nav ul li:first-child {

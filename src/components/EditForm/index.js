@@ -46,7 +46,7 @@ function EditForm(props) {
         }))
     }
 
-    useEffect(() => {
+    useEffect((props) => {
         
         const userId = getUser()._id;
 
