@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import InputField from '../InputField/InputField';
-import { addTop, delTop } from '../../services/userService';
+import { addTop } from '../../services/userService';
 import { getUser } from '../../services/userService';
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './TopTenForm.css';
 import { getToken } from '../../services/tokenService';
 
@@ -33,20 +33,6 @@ function TopTenForm(props) {
         .then(data =>  setListState(data.topTenArray)
     )}, []);
 
-    useEffect(() => {
-        const userId = getUser()._id;
-
-        const requestOptions = {
-            method: 'DELETE',
-            headers: {
-                'Authorization': 'Bearer ' + getToken(),
-                'My-Custom-Header': 'Delete Request'
-            }
-        };
-        fetch(BASE_URL + '/dashboard/:id/' + userId, requestOptions)
-        .then(() => setListState());
-    }, []);
-
     function getInitialFormState() {
         return {
             title: "",
@@ -70,26 +56,52 @@ function TopTenForm(props) {
         }))
     }
 
-    async function handleRemove(idx) {
-       try {
-           await delTop(topFormState);
+function handleDelete(idx) {
+    
+        const requestOptions = {
+            method: 'DELETE',
+            headers: {
+                'Authorization': 'Bearer ' + getToken()
+            }
+        }; 
+        fetch(BASE_URL + '/delete/' + idx, requestOptions)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
 
-           props.history.push('/dashboard');
-       } catch (error) {
-        alert(error.message);
-       }
-    }
+
+            const state = [...listState];
+            console.log('state:', state)
+            state.splice(idx, 1);
+            setListState(state);
+            console.log(state);
+        })
+
+        props.history.push('/dashboard');
+        
+}
 
     async function handleSubmit(evt) {
         try {
-
             evt.preventDefault();
             await addTop(topFormState);
 
             props.history.push('/dashboard');
             
             setTopFormState(getInitialFormState());
-        } catch (error) {
+
+            const userId = getUser()._id;
+
+            const requestOptions = {
+                headers: { 
+                    'Content-Type': 'Application/json',
+                    'Authorization': 'Bearer ' + getToken()
+                }
+            }
+            fetch(BASE_URL + '/dashboard/' + userId, requestOptions)
+            .then(response => response.json())
+            .then(data =>  setListState(data.topTenArray)
+        )} catch (error) {
             alert(error.message);
         }
     }
@@ -140,11 +152,12 @@ function TopTenForm(props) {
                                       <td className="title-data">{item.title}</td>
                                       <td className="content-data">{item.content}</td>
                                       <td>
-                                            <Link to={`/${idx.id}/edit`} className="edit">
+                                            <Link to={`/edit/${item._id}`} className="edit">
                                                 <i className="fa fa-edit"></i>
                                             </Link>
                                       </td>
-                                      <td className="delete" onClick={() => handleRemove(idx.id)}>
+                                      <td className="delete" 
+                                        onClick={() => handleDelete(idx)}>
                                             <i className="fas fa-times-circle"></i>
                                       </td>
                                   </tr>

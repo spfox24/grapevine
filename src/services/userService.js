@@ -41,27 +41,40 @@ function addTop(data) {
     }).then(response => {
         if(response.ok) return response.json();
         throw new Error('An Error Has Occured');
-    })
+    }).then (data => {
+        const topTen = JSON.stringify(data.topTenArray);
+        updateTopTen(topTen);
+    });
 }
 
-function delTop(data) {
-    return fetch(BASE_URL + '/dashboard', {
-        method: 'DELETE',
+function getList(userId) {
+    const headers = {
+        'Content-Type': 'Application/json'
+    }
+    return fetch(BASE_URL + '/dashboard/' + userId, { headers })
+    .then(response => response.json())
+    .then(data => console.log(JSON.stringify(data)));
+}
+
+function updateList(data, itemId) {
+    const userId = getUser()._id;
+
+    const requestOptions = {
+        method: 'PUT',
         headers: {
-            'Authorization': 'Bearer ' + getToken(),
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + getToken()
         },
-    }).then(response => {
-        if(response.ok) return response.json();
-        throw new Error('An Error Has Occured');
-    })
+        body: JSON.stringify(data)
+    }
+    return fetch(`${BASE_URL}/edit/${itemId}/${userId}`, requestOptions)
+    .then(response => response.json)
+    .then(data => console.log(data));
 }
 
-function edit(id) {
-
-}
-
-function update(id) {
-
+function updateTopTen(topTenArray) {
+    let user = getUser();
+    user.topTen = topTenArray;
 }
 
 function logout() {
@@ -78,7 +91,6 @@ export {
     logout,
     getUser,
     addTop,
-    delTop,
-    edit,
-    update,
+    getList,
+    updateList,
 };

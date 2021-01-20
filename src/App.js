@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { getUser, logout } from './services/userService';
 import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 
@@ -44,7 +44,7 @@ function App(props) {
       </header>
       <main>
         <Switch>
-          <Route exact path='/:id/edit'>
+          <Route exact path='/edit/:id'>
             <EditPage 
             {...props}
             />

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import InputField from '../InputField/InputField';
-import { getUser, update } from '../../services/userService';
+import { getUser, updateList } from '../../services/userService';
 import { Link } from 'react-router-dom';
 import './EditForm.css';
 import { getToken } from '../../services/tokenService';
@@ -9,22 +9,22 @@ import logo from '../../img/gvlogo.png';
 const BASE_URL = 'http://localhost:3001/api/users';
 
 function EditForm(props) {
-    
+
     const [ editState, setEditState ] = useState({
         title: "",
         content: "",
     });
 
     async function handleSubmit(evt) {
+        const itemUrl = props.location.pathname.split('/')
+        const itemId = itemUrl[2];
+
         try {
-
             evt.preventDefault();
-            await update(editState);
+            await updateList(editState, itemId);
 
-            
             props.history.push('/dashboard');
-            
-            setEditState();
+
         } catch (error) {
             alert(error.message);
         }
@@ -56,10 +56,14 @@ function EditForm(props) {
                 'Authorization': 'Bearer ' + getToken()
             }
         }
-        fetch(BASE_URL + '/edit/:id' + userId, requestOptions)
+        const itemUrl = props.location.pathname.split('/')
+        const itemId = itemUrl[2];
+            
+
+        fetch(`${BASE_URL}/edit/${itemId}/${userId}`, requestOptions)
         .then(response => response.json())
-        .then(data =>  setEditState(data.topTenArray)
-    )}, []);
+        .then(data => setEditState({ title: data.listItem.title, content: data.listItem.content}))
+    }, []);
 
     return (
         <div className="EditForm-container">
@@ -71,6 +75,7 @@ function EditForm(props) {
                         handleChange={handleChange}  
                         type="text"
                         placeholder="Title"
+                        value={editState.title}
                     />
                     <label for="Content"></label>
                         <div className="select">
