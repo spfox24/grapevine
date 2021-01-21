@@ -1,12 +1,12 @@
-import { useState } from 'react';
+import { useState, forwardRef, useImperativeHandle } from 'react';
 
 import './InputField.css';
 
-function InputField (props) {
+const InputField = forwardRef((props, ref) => {
     
     const [ inputState, setInputState ] = useState({
         active: (props.active && props.locked) || false,
-        value: props.value || "",
+        value: props.value ? props.value : "",
         error: props.error || "",
         label: props.placeholder || "Label",
         name: props.name,
@@ -18,12 +18,6 @@ function InputField (props) {
         setInputState({ ...inputState, value, error: "" });
         props.handleChange(inputState, value);
       }
-    
-      function handleKeyPress(evt) {
-          if(evt.which === 13) {
-              setInputState({ ...inputState, value: props.predicted });
-          }
-      }
 
     const { active, value, error, label } = inputState
     const { predicted, locked } = props;
@@ -32,19 +26,31 @@ function InputField (props) {
         (locked ? active : active || value) && "active"
     } ${locked && !active && "locked"}`;
 
+    useImperativeHandle(
+        ref, 
+        () => ({
+            changeInputState() {
+                setInputState({ ...inputState, value: "" });
+            },
+            populateEditField(value) {
+                setInputState({ ...inputState, value: value });
+            }
+        }),
+        )
+
     return (
         <div className={fieldClassName}>
             { active && value && predicted && predicted.includes(props.value) && (
                 <p className="predicted">{predicted}</p>
             )}
             <input
+                handleChange={props.handleChange}
                 pattern={props.pattern}
                 id={props.id}
                 type={props.type}
                 value={value}
                 placeholder={label}
                 onChange={changeValue}
-                handleKeyPress={handleKeyPress}
                 onFocus={() => !locked && setInputState({ ...inputState, active: true })}
                 onBlur={() => !locked && setInputState({ ...inputState, active: false })}
             />
@@ -53,6 +59,6 @@ function InputField (props) {
             </label>
         </div>
     );
-};
+});
 
 export default InputField;

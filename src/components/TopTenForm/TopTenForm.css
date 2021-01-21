@@ -115,7 +115,10 @@ td {
     cursor: pointer;
 }
 
-.edit:hover, 
+.edit:hover {
+    color:rgba(76, 200, 124, 0.7);
+}
+
 .delete:hover {
-    color:rgba(0, 0, 0, 0.4);
+    color: rgba(255, 111, 89, 0.5);
 }

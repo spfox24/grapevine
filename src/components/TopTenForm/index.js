@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import InputField from '../InputField/InputField';
 import { addTop } from '../../services/userService';
 import { getUser } from '../../services/userService';
@@ -11,12 +11,15 @@ const BASE_URL = 'http://localhost:3001/api/users';
 
 function TopTenForm(props) {
     
+    const inputRef = useRef();
+
     const [ topFormState, setTopFormState ] = useState({
         title: "",
         content: "",
     });
     
     const [ listState, setListState ] = useState([])
+
 
     useEffect(() => {
         
@@ -43,8 +46,9 @@ function TopTenForm(props) {
     function handleChange(input, arg) {
         setTopFormState(prevState => ({
             ...prevState,
-            [input.name]: arg,
-        }));
+            [input.name]: arg
+        })
+        );
     }
 
     function handleContentChange(evt) {
@@ -80,7 +84,6 @@ function handleDelete(idx) {
         props.history.push('/dashboard');
         
 }
-
     async function handleSubmit(evt) {
         try {
             evt.preventDefault();
@@ -89,6 +92,8 @@ function handleDelete(idx) {
             props.history.push('/dashboard');
             
             setTopFormState(getInitialFormState());
+
+            inputRef.current.changeInputState();
 
             const userId = getUser()._id;
 
@@ -106,6 +111,8 @@ function handleDelete(idx) {
         }
     }
 
+ 
+
     return (
         <div className="TopTen-container">
             <h1 className="list-header">My Grapevine</h1>
@@ -116,6 +123,7 @@ function handleDelete(idx) {
                             handleChange={handleChange}  
                             type="text"
                             placeholder="Title"
+                            ref={inputRef}
                         />
                         <label for="Content"></label>
                             <div className="select">

@@ -40,6 +40,7 @@ function App(props) {
         <NavBar 
           handleLogout={handleLogout}
           user={userState.user}
+          key={NavBar}
         />
       </header>
       <main>
@@ -47,17 +48,20 @@ function App(props) {
           <Route exact path='/edit/:id'>
             <EditPage 
             {...props}
+            key={EditPage}
             />
           </Route>
           <Route exact path='/' render={props =>
           <IndexPage 
-        
+          {...props}
+            key={IndexPage}
           />
           } />
           <Route exact path='/dashboard' render={props =>
             userState.user ? 
           <DashboardPage 
           {...props}
+          key={DashboardPage}
           />
           :
           <Redirect to="/login" />
@@ -66,12 +70,14 @@ function App(props) {
           <LoginPage 
             {...props}
             handleSignupOrLogin={handleSignupOrLogin} 
+            key={LoginPage}
           />
           } />
           <Route exact path='/signup' render={props =>
           <SignupPage
             {...props}
             handleSignupOrLogin={handleSignupOrLogin} 
+            key={SignupPage}
           />
           } />
         </Switch>

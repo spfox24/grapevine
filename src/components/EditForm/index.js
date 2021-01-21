@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import InputField from '../InputField/InputField';
 import { getUser, updateList } from '../../services/userService';
 import { Link } from 'react-router-dom';
@@ -9,16 +9,19 @@ import logo from '../../img/gvlogo.png';
 const BASE_URL = 'http://localhost:3001/api/users';
 
 function EditForm(props) {
-
+    
     const [ editState, setEditState ] = useState({
         title: "",
         content: "",
     });
-
+    
     async function handleSubmit(evt) {
-        const itemUrl = props.location.pathname.split('/')
-        const itemId = itemUrl[2];
 
+    
+        const itemUrl = props.location.pathname.split('/')
+            console.log(itemUrl)
+        const itemId = itemUrl[2];
+            
         try {
             evt.preventDefault();
             await updateList(editState, itemId);
@@ -46,8 +49,8 @@ function EditForm(props) {
         }))
     }
 
-    useEffect((props) => {
-        
+    useEffect(() => {
+    
         const userId = getUser()._id;
 
         const requestOptions = {
@@ -56,14 +59,21 @@ function EditForm(props) {
                 'Authorization': 'Bearer ' + getToken()
             }
         }
+
         const itemUrl = props.location.pathname.split('/')
         const itemId = itemUrl[2];
-            
+        
 
         fetch(`${BASE_URL}/edit/${itemId}/${userId}`, requestOptions)
         .then(response => response.json())
-        .then(data => setEditState({ title: data.listItem.title, content: data.listItem.content}))
+        .then(data => setEditState({ title: data.listItem.title, content: data.listItem.content }))
     }, []);
+
+    const inputRef = useRef();
+
+    useEffect(() => {
+            inputRef.current.populateEditField(editState.title)
+    }, [editState]);
 
     return (
         <div className="EditForm-container">
@@ -75,11 +85,17 @@ function EditForm(props) {
                         handleChange={handleChange}  
                         type="text"
                         placeholder="Title"
+                        ref={inputRef}
                         value={editState.title}
+                        active={true}
+                        locked={true}
                     />
                     <label for="Content"></label>
                         <div className="select">
-                            <select className="Content-select" value={editState.content} onChange={handleContentChange}>
+                            <select 
+                                className="Content-select" 
+                                value={editState.content} 
+                                onChange={handleContentChange}>
                                 <option value="Movie">Movie</option>
                                 <option value="Show">Show</option>
                                 <option value="Book">Book</option>
