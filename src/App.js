@@ -9,13 +9,18 @@ import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
 import DashboardPage from './pages/DashboardPage';
 import EditPage from './pages/EditPage';
+import MoviesPage from './pages/Movies/MoviesPage';
+import MovieDetailPage from './pages/Movies/MovieDetailPage';
+import ShowsPage from './pages/Shows/ShowsPage';
+import BooksPage from './pages/Books/BooksPage';
+
 
 import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer';
 
 
 function App(props) {
-  
+
   const [ userState, setUserState ] = useState({
     user: getUser()
   });
@@ -45,6 +50,30 @@ function App(props) {
       </header>
       <main>
         <Switch>
+        <Route exact path='/books'>
+            <BooksPage 
+            {...props}
+            key={BooksPage}
+            />
+          </Route>
+          <Route exact path='/shows'>
+            <ShowsPage 
+            {...props}
+            key={ShowsPage}
+            />
+          </Route>
+          <Route exact path='/movies'>
+            <MoviesPage 
+            {...props}
+            key={MoviesPage}
+            />
+          </Route>
+          <Route exact path='/movies/:id'>
+            <MovieDetailPage 
+            {...props}
+            key={MovieDetailPage}
+            />
+          </Route>
           <Route exact path='/edit/:id'>
             <EditPage 
             {...props}
@@ -52,33 +81,33 @@ function App(props) {
             />
           </Route>
           <Route exact path='/' render={props =>
-          <IndexPage 
-          {...props}
+            <IndexPage 
+            {...props}
             key={IndexPage}
-          />
+            />
           } />
           <Route exact path='/dashboard' render={props =>
             userState.user ? 
-          <DashboardPage 
-          {...props}
-          key={DashboardPage}
-          />
+            <DashboardPage 
+            {...props}
+            key={DashboardPage}
+            />
           :
           <Redirect to="/login" />
           } />
           <Route exact path='/login' render={props =>
-          <LoginPage 
-            {...props}
-            handleSignupOrLogin={handleSignupOrLogin} 
-            key={LoginPage}
-          />
+            <LoginPage 
+              {...props}
+              handleSignupOrLogin={handleSignupOrLogin} 
+              key={LoginPage}
+            />
           } />
           <Route exact path='/signup' render={props =>
-          <SignupPage
-            {...props}
-            handleSignupOrLogin={handleSignupOrLogin} 
-            key={SignupPage}
-          />
+            <SignupPage
+              {...props}
+              handleSignupOrLogin={handleSignupOrLogin} 
+              key={SignupPage}
+            />
           } />
         </Switch>
 

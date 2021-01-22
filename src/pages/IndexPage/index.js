@@ -19,21 +19,21 @@ const IndexPage = (props) => {
             </div>
 
             <div className="m">
-                    <ContentCard 
-                        id={1}
-                        content="Movies"
-                        url="https://www.imdb.com/"
-                    />
-                    <ContentCard 
-                        id={2}
-                        content="Shows"
-                        url="https://www.imdb.com/"
-                    />
-                    <ContentCard 
-                        id={3}
-                        content="Books"
-                        url="https://books.google.com/"
-                    />
+                <ContentCard 
+                    id={1}
+                    content="Movies"
+                    url="/movies"
+                />
+                <ContentCard 
+                    id={2}
+                    content="Shows"
+                    url="/shows"
+                />
+                <ContentCard 
+                    id={3}
+                    content="Books"
+                    url="/books"
+                />
             </div>
             
             <div className="b">
