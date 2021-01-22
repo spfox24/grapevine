@@ -1,0 +1,12 @@
+.MovieHeader {
+    font-family: var(--font-primary);
+    font-size: 60px;
+    text-align: center;
+}
+
+.MovieCards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}

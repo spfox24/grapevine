@@ -12,6 +12,9 @@ function Footer (props) {
                     <h2>Navigation</h2>
                         <Link to="/signup">Signup</Link>
                         <Link to="/login">Login</Link>
+                        <Link to="/movies">Movies</Link>
+                        <Link to="/shows">Shows</Link>
+                        <Link to="/books">Books</Link>
                         <Link to="/">About Us</Link>
                         <Link to="/">Terms of Service</Link>
                 </div>

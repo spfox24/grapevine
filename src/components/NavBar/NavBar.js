@@ -11,6 +11,15 @@ const NavBar = (props) => {
                         <img src={logo} className="Logo" alt="logo"/>
                     </Link>
                 </li>
+                <li className="nav-link">
+                    <Link to='/movies'className="NavBar-link">Movies</Link>
+                </li>
+                <li className="nav-link">
+                    <Link to='/shows'className="NavBar-link">Shows</Link>
+                </li>
+                <li className="nav-link">
+                    <Link to='/books'className="NavBar-link">Books</Link>
+                </li>
                 {
                     props.user ?
                     <>

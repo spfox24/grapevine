@@ -10,8 +10,9 @@ import LoginPage from './pages/LoginPage';
 import DashboardPage from './pages/DashboardPage';
 import EditPage from './pages/EditPage';
 import MoviesPage from './pages/Movies/MoviesPage';
-import MovieDetailPage from './pages/Movies/MovieDetailPage';
+import MovieDetailPage from './pages/Movies/MovieDetailPage/MovieDetailPage';
 import ShowsPage from './pages/Shows/ShowsPage';
+import ShowDetailPage from './pages/Shows/ShowDetailPage/ShowDetailPage';
 import BooksPage from './pages/Books/BooksPage';
 
 
@@ -60,6 +61,12 @@ function App(props) {
             <ShowsPage 
             {...props}
             key={ShowsPage}
+            />
+          </Route>
+          <Route exact path='/shows/:id'>
+            <ShowDetailPage 
+            {...props}
+            key={ShowDetailPage}
             />
           </Route>
           <Route exact path='/movies'>
