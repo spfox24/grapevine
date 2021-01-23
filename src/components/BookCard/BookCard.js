@@ -5,13 +5,11 @@ import './BookCard.css';
 export default function BookCard(props) {
 
     const [ bookData, setBookData ] = useState({
-            nowReading: {
-                results: {
-                    lists: [{
-                        books: [],
-                    }],
-                },
+        nowReading: {
+            results: {
+                books: [],
             }
+        }
     });
 
     useEffect(() => {
@@ -24,7 +22,7 @@ export default function BookCard(props) {
 
     }, []);
     
-    const booksArr = bookData.nowReading.results.lists[0].books;
+    const booksArr = bookData.nowReading.results.books;
 
     return (
             booksArr.map(book => 
