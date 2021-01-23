@@ -19,7 +19,7 @@ function EditForm(props) {
 
     
         const itemUrl = props.location.pathname.split('/')
-            console.log(itemUrl)
+         
         const itemId = itemUrl[2];
             
         try {

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { fetchBooks } from '../../services/bookService';
 import './BookCard.css';
 
@@ -27,12 +28,14 @@ export default function BookCard(props) {
     return (
             booksArr.map(book => 
         <>
+        <Link key={book.primary_isbn10} to={`/books/${book.primary_isbn10}`}>
             <div className="BookCard">
                     <img 
                         src={book.book_image} 
                         alt={book.title}
                     />
             </div>
+        </Link>
         </>
         )
     );

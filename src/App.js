@@ -52,48 +52,48 @@ function App(props) {
       </header>
       <main>
         <Switch>
-        <Route exact path='/books'>
+        <Route exact path='/books' render={props =>
             <BooksPage 
             {...props}
             key={BooksPage}
             />
-          </Route>
-        <Route exact path='/books/:id'>
+          } />
+        <Route exact path='/books/:id' render={props => 
             <BookDetailPage 
             {...props}
             key={BookDetailPage}
             />
-          </Route>
-          <Route exact path='/shows'>
+          } />
+          <Route exact path='/shows' render={props => 
             <ShowsPage 
             {...props}
             key={ShowsPage}
             />
-          </Route>
-          <Route exact path='/shows/:id'>
+          } />
+          <Route exact path='/shows/:id' render={props =>
             <ShowDetailPage 
             {...props}
             key={ShowDetailPage}
             />
-          </Route>
-          <Route exact path='/movies'>
+          } />
+          <Route exact path='/movies' render={props =>
             <MoviesPage 
             {...props}
             key={MoviesPage}
             />
-          </Route>
-          <Route exact path='/movies/:id'>
+          } />
+          <Route exact path='/movies/:id' render={props => 
             <MovieDetailPage 
             {...props}
             key={MovieDetailPage}
             />
-          </Route>
-          <Route exact path='/edit/:id'>
+          } />
+          <Route exact path='/edit/:id' render={props =>
             <EditPage 
             {...props}
             key={EditPage}
             />
-          </Route>
+          } />
           <Route exact path='/' render={props =>
             <IndexPage 
             {...props}
