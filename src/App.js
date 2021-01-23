@@ -14,6 +14,7 @@ import MovieDetailPage from './pages/Movies/MovieDetailPage/MovieDetailPage';
 import ShowsPage from './pages/Shows/ShowsPage';
 import ShowDetailPage from './pages/Shows/ShowDetailPage/ShowDetailPage';
 import BooksPage from './pages/Books/BooksPage';
+import BookDetailPage from './pages/Books/BookDetailPage/BookDetailPage';
 
 
 import NavBar from './components/NavBar/NavBar';
@@ -55,6 +56,12 @@ function App(props) {
             <BooksPage 
             {...props}
             key={BooksPage}
+            />
+          </Route>
+        <Route exact path='/books/:id'>
+            <BookDetailPage 
+            {...props}
+            key={BookDetailPage}
             />
           </Route>
           <Route exact path='/shows'>

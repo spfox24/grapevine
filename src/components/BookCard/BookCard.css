@@ -1,4 +1,4 @@
-.ShowCard {
+.BookCard {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -6,11 +6,11 @@
     transition: 0.3s opacity ease-in-out;
 }
 
-.ShowCard:hover {
+.BookCard:hover {
     opacity: 0.90;
 }
 
-.ShowCard > img {
+.BookCard > img {
     border-radius: 4px;
     margin: 4px;
 }

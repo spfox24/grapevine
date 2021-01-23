@@ -3,6 +3,11 @@
     flex-direction: column;
     flex-wrap: wrap;
     float: left;
+    transition: 0.3s opacity ease-in-out;
+}
+
+.MovieCard:hover {
+    opacity: 0.90;
 }
 
 .MovieCard > img {
