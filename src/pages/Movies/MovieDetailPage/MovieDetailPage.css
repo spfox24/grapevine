@@ -20,6 +20,7 @@ hr {
     align-items: left;
     flex-direction: column;
     max-width: 500px;
+    max-height: auto;
     font-family: var(--font-primary);
     border: 2px solid var(--accent-color);
     border-radius: 4px;

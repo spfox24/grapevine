@@ -36,7 +36,7 @@ export default function ShowDetailPage(props) {
                     alt={show.original_name} 
                     />
                 </div>
-                <div className="ShowDesc">
+                <section className="ShowDesc">
                     <h1 className="movie-title">{show.original_name}</h1>
                     <hr/>
                     <p>{show.overview}</p>
@@ -45,7 +45,7 @@ export default function ShowDetailPage(props) {
                                 Favorite <i class="fas fa-heart"></i>
                         </Link>
                     </div>
-                </div>
+                </section>
             </section>
         </main>
     );

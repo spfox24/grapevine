@@ -37,17 +37,17 @@ export default function MovieDetailPage(props) {
                     alt={movie.original_title} 
                     />
                 </div>
-                <div className="MovieDesc">
+                <section className="MovieDesc">
                     <h1 className="movie-title">{movie.title}</h1>
                     <hr/>
                     <p className="movie-date">Released on: {new Date(movie.release_date).toLocaleDateString()}</p>
                     <p className="movie-text">{movie.overview}</p>
                     <div className="detail-links">
                         <Link className="mdetail-link" to="/movies">
-                                Favorite <i class="fas fa-heart"></i>
-                            </Link>
+                            Favorite <i class="fas fa-heart"></i>
+                        </Link>
                     </div>
-                </div>
+                </section>
             </section>
         </main>
     );

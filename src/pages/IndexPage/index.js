@@ -36,7 +36,7 @@ const IndexPage = (props) => {
                 />
             </div>
             
-            <div className="b">
+            <div className="b-index">
                 <h2 className="headline-bottom">Help grow our community by following us on any of our <br/>social media platforms</h2>
                 <p className="text-content"><strong>Grapevine Social&copy;</strong> was designed to be a community driven application with what is trending now. Many times we get recommendations from friends or family for what content to stream, listen to, or read. <strong>Grapevine Social&copy;</strong> brings your community together all in one place. <br/>
                 <br/>What will be your next great binge?</p>

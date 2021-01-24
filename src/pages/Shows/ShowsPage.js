@@ -3,8 +3,6 @@ import { fetchShows } from '../../services/showService';
 import ShowCard from '../../components/ShowCard/ShowCard';
 import './ShowsPage.css';
 
-
-
 export default function ShowsPage(props) {
 
     const [ showData, setShowData ] = useState({
