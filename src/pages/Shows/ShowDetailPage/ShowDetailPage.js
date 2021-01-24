@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { fetchShow } from '../../../services/showService';
+import { Link } from 'react-router-dom';
 import './ShowDetailPage.css';
 
 
@@ -39,6 +40,11 @@ export default function ShowDetailPage(props) {
                     <h1 className="movie-title">{show.original_name}</h1>
                     <hr/>
                     <p>{show.overview}</p>
+                    <div className="detail-links">
+                        <Link className="sdetail-link" to="/shows">
+                                Favorite <i class="fas fa-heart"></i>
+                        </Link>
+                    </div>
                 </div>
             </section>
         </main>

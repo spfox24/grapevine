@@ -67,7 +67,7 @@ function EditForm(props) {
         fetch(`${BASE_URL}/edit/${itemId}/${userId}`, requestOptions)
         .then(response => response.json())
         .then(data => setEditState({ title: data.listItem.title, content: data.listItem.content }))
-    }, []);
+    }, [props.location.pathname]);
 
     const inputRef = useRef();
 

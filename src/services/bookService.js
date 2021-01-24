@@ -8,12 +8,7 @@ function fetchBook(id) {
     return fetch(`${BASE_URL}/books/${id}`).then(res => res.json());
 }
 
-function addFavorite() {
-
-};
-
 export {
     fetchBooks,
-    fetchBook,
-    addFavorite
+    fetchBook
 };

@@ -1,19 +1,21 @@
 const BASE_URL = '/api';
 
-function fetchMovies() {
-    return fetch(BASE_URL + '/movies').then(res => res.json());
+function fetchMovies(pageNum) {
+    let url;
+
+    if(pageNum) {
+        url = `${BASE_URL}/movies?page=${pageNum}`;
+    } else {
+        url = `${BASE_URL}/movies`
+    }
+    return fetch(url).then(res => res.json());
 };
 
 function fetchMovie(id) {
     return fetch(BASE_URL + `/movies/${id}`).then(res => res.json());
 };
 
-function addFavorite() {
-
-};
-
 export {
     fetchMovies,
-    fetchMovie,
-    addFavorite
+    fetchMovie
 };

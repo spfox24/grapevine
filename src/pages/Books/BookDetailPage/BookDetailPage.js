@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { fetchBook } from '../../../services/bookService';
 import './BookDetail.css';
 
@@ -38,6 +39,11 @@ export default function BookDetailPage(props) {
                     <hr/>
                     <h3 className="book-author">{book && book.author}</h3>
                     <p className="book-text">{book && book.description}</p>
+                    <div className="detail-links">
+                        <Link className="bdetail-link" to="/books">
+                                Favorite <i class="fas fa-heart"></i>
+                        </Link>
+                    </div>
                 </div>
             </section>
         </main>

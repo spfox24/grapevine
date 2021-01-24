@@ -1,5 +1,6 @@
 .MovieDetail {
     display: flex;
+    margin-bottom: 20px;
 }
 
 .MoviePoster {
@@ -31,4 +32,32 @@ hr {
     font-size: 38px;
     color: var(--accent-color);
     padding: 8px;
+    text-align: center;
+}
+
+.movie-date {
+    font-weight: 600;
+}
+
+.mdetail-link {
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    padding: 6px;
+    text-decoration: none;
+    color: var(--accent-color);
+    margin: 10px 15px 0 0; 
+    transition: 0.3s box-shadow ease-in-out, 0.3s opacity ease-in-out, 0.3s font-weight ease-in-out;
+}
+
+.mdetail-link:hover {
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.08);
+    opacity: 0.90;
+}
+
+@media (max-width: 1100px) {
+    .MovieDetail {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
 }
