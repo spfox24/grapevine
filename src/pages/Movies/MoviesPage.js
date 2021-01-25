@@ -55,7 +55,7 @@ export default function MoviesPage(props) {
             </div>
             </>
             <div className="b">
-                <button onClick={() => handlePaginate(page - 1 == 0 ? 1 : page - 1)}>Previous</button>
+                <button onClick={() => handlePaginate(page - 1 === 0 ? 1 : page - 1)}>Previous</button>
                 <button onClick={() => handlePaginate(page + 1 > totalPages ? totalPages : page + 1 )}>Next</button>
             </div>
         </section> 
