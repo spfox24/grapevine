@@ -1,6 +1,6 @@
 .MovieDetail {
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 80px;
 }
 
 .MoviePoster {
@@ -60,5 +60,9 @@ hr {
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
+    }
+
+    .MovieDesc {
+      height: 625px;
     }
 }

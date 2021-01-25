@@ -32,7 +32,7 @@ export default function ShowDetailPage(props) {
             <section className="ShowDetail">
                 <div className="ShowPoster">
                     <img
-                    src={`https://image.tmdb.org/t/p/w300/${show.poster_path}`} 
+                    src={`https://image.tmdb.org/t/p/w400/${show.poster_path}`} 
                     alt={show.original_name} 
                     />
                 </div>

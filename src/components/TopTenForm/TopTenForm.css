@@ -8,6 +8,7 @@
     padding: 20px 40px 20px 40px;
     box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.2);
     background-color: var(--main-color);
+    margin-bottom: 80px;
 }
 
 .list-header {
@@ -116,7 +117,7 @@ td {
 }
 
 .edit:hover {
-    color:rgba(76, 200, 124, 0.7);
+    color:rgba(76, 200, 124, 0.8);
 }
 
 .delete:hover {

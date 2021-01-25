@@ -111,8 +111,6 @@ function handleDelete(idx) {
         }
     }
 
- 
-
     return (
         <div className="TopTen-container">
             <h1 className="list-header">My Grapevine</h1>

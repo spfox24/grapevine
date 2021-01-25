@@ -1,5 +1,6 @@
 .BookDetail {
     display: flex;
+    margin-bottom: 80px;
 }
 
 .BookPoster {
@@ -52,4 +53,16 @@ hr {
 .bdetail-link:hover {
     box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.08);
     opacity: 0.90;
+}
+
+@media (max-width: 1100px) {
+    .BookDetail {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .BookDesc {
+        height: 543px;
+    }
 }

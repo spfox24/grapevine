@@ -48,7 +48,7 @@ const NavBar = (props) => {
                             <Link to='/dashboard' 
                                 className="NavBar-link"
                                 onClick={handleClick}>
-                                My Grapevine
+                                Grapevine
                             </Link>
                         </li>
                         <li className="nav-link">
