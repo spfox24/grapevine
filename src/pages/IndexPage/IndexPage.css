@@ -1,14 +1,15 @@
-.IndexHeader {
-    font-family: var(--font-primary);
-    font-size: 60px;
-    text-align: center;
-}
 
 .t {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.IndexHeader {
+    font-family: var(--font-primary);
+    font-size: 60px;
+    text-align: center;
 }
 
 .Button {
@@ -61,4 +62,92 @@
 .text-content {
     font-size: 1em;
     padding: 0px 160px;
+}
+
+@media screen and (max-width: 945px) {
+    .IndexHeader {
+        font-size: 45px;
+    }
+
+    .headline-bottom {
+        font-size: 1.75em;
+    }
+
+    .text-content {
+        font-size: 0.95em;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .m {
+        width: 80vh;
+        height: 375px;
+    }
+
+    .headline-bottom {
+        font-size: 1.65em;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .headline-bottom {
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    
+    .IndexHeader {
+        font-size: 34px;
+    }
+    
+    .Button {
+        font-size: 14px;
+        height: 30px;
+        width: 120px;
+    }
+
+    .m {
+        width: 60vh;
+        height: 281px;
+    }
+
+    .headline-bottom {
+        font-size: 1.25em;
+    }
+
+    .text-content {
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .headline-bottom {
+        font-size: 1.10em;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .IndexHeader {
+        font-size: 26px;
+    }
+
+    .Button {
+        font-size: 10px;
+        height: 22px;
+        width: 90px;
+    }
+
+    .m {
+        width: 50vh;
+        height: 210px;
+    }
+    
+    .headline-bottom {
+        font-size: 0.9em;
+    }
+
+    .text-content {
+        font-size: 0.75em;
+    }
 }

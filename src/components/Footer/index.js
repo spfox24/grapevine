@@ -95,7 +95,7 @@ function Footer (props) {
             </section>
         </div>
         <small className="website-rights">
-            Copyright &copy; All Rights Reserved {new Date().getFullYear()}
+            &copy; Grapevine All Rights Reserved {new Date().getFullYear()}
         </small>
     </div>
     )

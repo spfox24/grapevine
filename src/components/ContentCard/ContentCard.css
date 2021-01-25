@@ -30,3 +30,29 @@
     text-decoration: none;
     color: #ffffff;
 }
+
+@media screen and (max-width: 860px) {
+    .ContentCard {
+        font-size: 30px;
+        width: 150px;
+        height: 168px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .ContentCard {
+        font-size: 22px;
+        width: 112px;
+        height: 126px;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .ContentCard {
+        font-size: 16px;
+        width: 84px;
+        height: 94px;
+    }
+}
+
+
