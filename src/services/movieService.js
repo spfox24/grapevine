@@ -1,4 +1,4 @@
-const BASE_URL = '/api';
+const BASE_URL = 'https://grapevine-content-app.herokuapp.com/api';
 
 function fetchMovies(pageNum) {
     let url;
