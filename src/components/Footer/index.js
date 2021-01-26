@@ -20,33 +20,105 @@ function Footer (props) {
                 </div>
                 <div className="footer-link-items">
                     <h2>Social Media</h2>
-                        <a href="https://www.facebook.com/">Facebook</a>
-                        <a href="https://www.instagram.com/">Instagram</a>
-                        <a href="https://twitter.com/">Twitter</a>
-                        <a href="https://github.com/">GitHub</a>
+                        <a href="https://www.facebook.com/"
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label="Facebook"
+                        >Facebook</a>
+                        <a href="https://www.instagram.com/"
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label="Instagram"
+                        >Instagram</a>
+                        <a href="https://twitter.com/"
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label="Twitter"
+                        >Twitter</a>
+                        <a href="https://github.com/"
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label="GitHub"
+                        >GitHub</a>
                 </div>
                 <div className="footer-link-items">
                     <h2>Watch</h2>
-                        <a href="https://www.netflix.com/">Netflix</a>
-                        <a href="https://www.hulu.com/">Hulu</a>
-                        <a href="https://www.primevideo.com/">Prime Video</a>
-                        <a href="https://www.disneyplus.com/">Disney+</a>
-                        <a href="https://www.hbomax.com/">HBO Max</a>
+                        <a href="https://www.netflix.com/"
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label="Netflix"
+                        >Netflix</a>
+                        <a href="https://www.hulu.com/"
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label="Hulu"
+                        >Hulu</a>
+                        <a href="https://www.primevideo.com/"
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label="Prime Video"
+                        >Prime Video</a>
+                        <a href="https://www.disneyplus.com/"
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label="Disney+"
+                        >Disney+</a>
+                        <a href="https://www.hbomax.com/"
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label="HBO Max"
+                        >HBO Max</a>
                 </div>
                 <div className="footer-link-items">
                     <h2>Read</h2>
-                        <a href="https://www.scribd.com/">Scribd</a>
-                        <a href="https://www.amazon.com/kindle-dbs/hz/subscribe/ku?*entries*=0&_encoding=UTF8&*Version*=1&shoppingPortalEnabled=true">Kindle Unlimited</a>
-                        <a href="https://libbyapp.com/">Libby</a>
-                        <a href="https://www.goodreads.com/">Goodreads</a>
-                        <a href="https://www.bookofthemonth.com/">Book of the Month</a>
+                        <a href="https://www.scribd.com/"
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label="Scribd"
+                        >Scribd</a>
+                        <a href="https://www.amazon.com/kindle-dbs/hz/subscribe/ku?*entries*=0&_encoding=UTF8&*Version*=1&shoppingPortalEnabled=true"
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label="Kindle Unlimited"
+                        >Kindle Unlimited</a>
+                        <a href="https://libbyapp.com/"
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label="Libby"
+                        >Libby</a>
+                        <a href="https://www.goodreads.com/"
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label="Goodreads"
+                        >Goodreads</a>
+                        <a href="https://www.bookofthemonth.com/"
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label="Book of the Month"
+                        >Book of the Month</a>
                 </div>
                 <div className="footer-link-items">
                     <h2>Listen</h2>
-                        <a href="https://www.spotify.com/">Spotify</a>
-                        <a href="https://www.apple.com/apple-music/">Apple Music</a>
-                        <a href="https://www.audible.com/">Audible</a>
-                        <a href="https://soundcloud.com/">SoundCloud</a>
+                        <a href="https://www.spotify.com/"
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label="Spotify"
+                        >Spotify</a>
+                        <a href="https://www.apple.com/apple-music/"
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label="Apple Music"
+                        >Apple Music</a>
+                        <a href="https://www.audible.com/"
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label="Audible"
+                        >Audible</a>
+                        <a href="https://soundcloud.com/"
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label="SoundCloud"
+                        >SoundCloud</a>
                 </div>
             </div>
             <section className="social-media">
