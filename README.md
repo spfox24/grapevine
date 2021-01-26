@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# **Grapevine**
+Grapevine was designed to be a community driven application with what content is trending now. So many times we are given recommendations from friends or family on what to watch or read. Grapevine allows the user to keep all those suggestions in one place, and in future states will allow that community to interact with one another.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Version 1.0
+Current build includes:
+- Signup
+- Login
+- User Dashboard
+    - Add/Edit/Delete Functionality to Grapevine List
+- Movie/Show/Book suggestions by page and current popularity
 
-In the project directory, you can run:
+### Wireframe:
+![wireframe](./public/Grapevine-Index.png)
+![wireframe](./public/Grapevine-Index-Logged-In.png)
+![wireframe](./public/Grapevine-Grapevine-User-Page.png)
+![wireframe](./public/Grapevine-Grapevine-User-List.png)
+### App Screenshot(s):
+![HomePage](./public/HomePage.png)
+![Signup](./public/Signup.png)
+![Dashboard](./public/Dashboard.png)
+![Movies](./public/Movies.png)
+![Mobile Menu](./public/MobileMenu.png)
+### Technologies:
+- HTML5
+- CSS3
+- JavaScript
+- Node.js
+- Express
+- MongoDB
+- Mongoose
+- Axios
+- The Movie DB API
+    - Movies/Shows
+- New York Times API
+    - Books
+- JSON Web Token (JWT)
+- Heroku
+- Netlify
+- React JS
+- React Router
+- Images provided by Unsplash
+- Logo created in Canva
 
-### `npm start`
+## Getting Started
+#### Trello:
+https://trello.com/b/QgLW9tWM/project-3-board
+#### App:
+##### Grapevine: 
+https://grapevine-app.netlify.app/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Future Versions to Include
+- User to User Functionality
+    - Search users
+    - Leave recommendations to other users
+- Movie/Show/Book query
+- Favorite content
+    - Send favorite content to dashboard
