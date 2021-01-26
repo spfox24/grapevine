@@ -1,5 +1,6 @@
 # **Grapevine**
 ![Logo](./src/img/gvlogo.png)
+
 Grapevine was designed to be a community driven application with what content is trending now. So many times we are given recommendations from friends or family on what to watch or read. Grapevine allows the user to keep all those suggestions in one place, and in future states will allow that community to interact with one another.
 
 
